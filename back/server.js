@@ -1,4 +1,5 @@
 const app = require('./app');
+const connectDB = require('./config/database');
 
 // Language: javascript
 // Path: back\server.js
@@ -6,6 +7,10 @@ const app = require('./app');
 
 const dotenv = require('dotenv');
 dotenv.config({ path: 'back/config/config.env' });
+
+// Configura DB
+connectDB();
+
 
 // Configuracion del puerto segun archivo de configuracion
 const server= app.listen(process.env.PORT, () => {
